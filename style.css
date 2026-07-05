@@ -12,8 +12,8 @@ body{
 }
 
 .main-image{
-    width: 84px;
-    height: 84px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
     border: none;
