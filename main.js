@@ -26,7 +26,7 @@ window.addEventListener('keydown', function(e) {
 
 document.addEventListener("DOMContentLoaded", function () {
     new TypeIt("#typewriter-text", {
-        strings: ["welcome", "all socials are below", "thanks for stopping by ♡"],
+        strings: ["welcome", "all socials are below", "thanks for stopping by xd"],
         speed: 150,
         loop: true,
         breakLines: false,
