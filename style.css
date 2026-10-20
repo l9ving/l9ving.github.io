@@ -68,3 +68,91 @@ body{
 .ti-cursor {
     color: #3b82f6; /* Matching your blue highlight color */
 }
+
+
+/* epic games creator code */
+
+.epic-code {
+    display: grid;
+    place-items: center;
+    margin-top: 18px;
+    padding: 0 12px;
+    min-height: 24px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #c8c2c8;
+    text-align: center;
+}
+
+.epic-code-default,
+.epic-code-confirmation {
+    grid-area: 1 / 1;
+    transition: opacity 0.35s ease,
+                transform 0.35s ease,
+                visibility 0.35s ease;
+}
+
+.epic-code-default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.epic-code-default strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* small copy icon */
+
+.epic-copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 2px;
+    color: #a8a3a8;
+    cursor: pointer;
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.epic-copy-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.epic-copy-button:focus-visible {
+    outline: 1px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* confirmation initially hidden */
+
+.epic-code-confirmation {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    pointer-events: none;
+}
+
+/* fade original text out */
+
+.epic-code.is-copied .epic-code-default {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    pointer-events: none;
+}
+
+/* fade confirmation text in */
+
+.epic-code.is-copied .epic-code-confirmation {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
