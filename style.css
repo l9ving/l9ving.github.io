@@ -70,76 +70,133 @@ body{
 }
 
 
-/* epic games creator code */
+
+/* Epic Games creator code */
 
 .epic-code {
+    position: relative;
+    width: 155px;
+    max-width: calc(100vw - 24px);
+    min-height: 36px;
+    margin-top: 22px;
+
     display: grid;
     place-items: center;
-    margin-top: 18px;
-    padding: 0 12px;
-    min-height: 24px;
+
     font-family: 'Lexend', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
-    color: #c8c2c8;
+    line-height: 1.45;
+    color: #ffffff;
     text-align: center;
 }
+
+/* Both messages occupy the same position */
 
 .epic-code-default,
 .epic-code-confirmation {
     grid-area: 1 / 1;
-    transition: opacity 0.35s ease,
-                transform 0.35s ease,
-                visibility 0.35s ease;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
 }
+
+/* Original message */
 
 .epic-code-default {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 2px;
+    width: 100%;
 }
 
-.epic-code-default strong {
+/* First line */
+
+.epic-code-first-line {
+    color: #ffffff;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+/* Second line */
+
+.epic-code-second-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    color: #ffffff;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.epic-code-second-line strong {
     color: #ffffff;
     font-weight: 600;
 }
 
-/* small copy icon */
+/* Copy button */
 
 .epic-copy-button {
+    all: unset;
+    box-sizing: border-box;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
-    padding: 2px;
-    color: #a8a3a8;
+
+    width: 18px;
+    height: 18px;
+
+    color: #ffffff;
+    opacity: 0.7;
     cursor: pointer;
-    transition: color 0.25s ease,
-                transform 0.25s ease;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.epic-copy-button svg {
+    width: 13px;
+    height: 13px;
 }
 
 .epic-copy-button:hover {
-    color: #ffffff;
+    opacity: 1;
     transform: scale(1.1);
 }
 
 .epic-copy-button:focus-visible {
-    outline: 1px solid #ffffff;
+    outline: 1px solid white;
     outline-offset: 3px;
 }
 
-/* confirmation initially hidden */
+/* Hidden confirmation text */
 
 .epic-code-confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(4px);
     pointer-events: none;
 }
 
-/* fade original text out */
+/* Fade original message out */
 
 .epic-code.is-copied .epic-code-default {
     opacity: 0;
@@ -148,11 +205,10 @@ body{
     pointer-events: none;
 }
 
-/* fade confirmation text in */
+/* Fade confirmation message in */
 
 .epic-code.is-copied .epic-code-confirmation {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
