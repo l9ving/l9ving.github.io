@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="fawn.gg — socials and creator code">
+  <title>fawn</title>
+  <link rel="icon" href="favicon-icon.png" type="image/png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <!-- Open-source WIN95FA webfont from Fontsource (SIL OFL 1.1). -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/win95fa@5.2.5/400.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <main class="page">
+    <div class="center-controls">
+      <nav class="social-select-wrap" aria-label="Social links">
+        <label class="sr-only" for="socialSelect">Socials</label>
+        <select id="socialSelect" class="cd-select" aria-label="Socials">
+          <option value="" selected>socials</option>
+          <option value="https://www.twitch.tv/loving">twitch</option>
+          <option value="https://x.com/lpving">x</option>
+          <option value="https://www.tiktok.com/@l_venote">tiktok</option>
+          <option value="https://www.youtube.com/@lpving">youtube</option>
+          <option value="https://discord.gg/heart">discord</option>
+          <option value="https://throne.com/cuter">throne</option>
+          <option value="creator-code">creator code</option>
+        </select>
+      </nav>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="creatorModal" hidden>
+    <div class="dialog" id="creatorCodeDialog" role="dialog" aria-modal="true" aria-labelledby="dialogQuestion">
+      <p id="dialogQuestion">copy creator code &quot;wuvabl&quot;?</p>
+      <div class="dialog-buttons">
+        <button id="copyYes" type="button">yes</button>
+        <button id="copyNo" type="button">no</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add your own never_again.mp3 in the same directory. Browser autoplay restrictions apply. -->
+  <audio id="audioPlayer" src="never_again.mp3" preload="none" autoplay loop></audio>
+</body>
+</html>
