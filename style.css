@@ -27,7 +27,7 @@ button,select,option { font-family:inherit; font-size:inherit; font-weight:inher
   -webkit-user-select:auto; user-select:auto;
 }
 .cd-select option { color:#8b8b8b; background:#fff }
-.modal-overlay { position:fixed; inset:0; z-index:99; display:flex; align-items:center; justify-content:center; padding:22px; background:rgba(0,0,0,.035) }
+.modal-overlay { position:fixed; inset:0; z-index:99; display:flex; align-items:center; justify-content:center; padding:22px; background: transparent; }
 .dialog { width:min(246px,100%); padding:23px 18px 19px; background:#fff; border:0; border-radius:0; box-shadow:none; text-align:center }
 .dialog p { margin:0 0 15px; line-height:1.6; color:#8b8b8b; font-size:11px; white-space:nowrap }
 .dialog-buttons { display:flex; justify-content:center; gap:23px }
