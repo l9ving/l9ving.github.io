@@ -1,0 +1,170 @@
+:root{
+      --bg:#ffffff;
+      /* Unified #aaa palette for icons, labels, and controls. */
+      --ink:#aaa;
+      --ink-strong:#aaa;
+      --muted:#aaa;
+      --line:#aaa;
+      --accent:#aaa;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'Inconsolata',monospace;
+      font-size:8px;
+      font-weight:300;
+      line-height:1.45;
+      letter-spacing:0.5px;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    button,input{font:inherit;letter-spacing:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{cursor:pointer}
+    .page{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:72px 20px;
+      position:relative;
+    }
+    .player{
+      position:fixed;
+      top:28px;
+      left:34px;
+      z-index:10;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--ink-strong);
+    }
+    .player button{
+      border:0;
+      background:transparent;
+      color:inherit;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:20px;
+      padding:0;
+      transition:color .18s ease;
+    }
+    .player button:hover,.player button:focus-visible{color:var(--accent)}
+    .player .play svg{width:12px;height:12px;fill:currentColor}
+    .player .speaker svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .volume{
+      appearance:none;
+      -webkit-appearance:none;
+      width:78px;
+      height:2px;
+      border-radius:99px;
+      background:linear-gradient(to right,var(--ink-strong) 70%,var(--line) 70%);
+      outline:0;
+      margin:0 0 0 -2px;
+      cursor:pointer;
+    }
+    .volume::-webkit-slider-thumb{
+      appearance:none;
+      -webkit-appearance:none;
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      border:0;
+      background:var(--ink-strong);
+    }
+    .volume::-moz-range-thumb{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      border:0;
+      background:var(--ink-strong);
+    }
+    .center{
+      width:min(100%,420px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      transform:none;
+    }
+    .socials{
+      margin-top:0;
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0,1fr));
+      gap:15px;
+      width:240px;
+      justify-items:center;
+      align-items:center;
+    }
+    .social{
+      width:18px;
+      height:18px;
+      color:var(--ink);
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition:transform .16s ease,color .16s ease,opacity .16s ease;
+      outline-offset:5px;
+    }
+    .social:hover,.social:focus-visible{
+      color:#aaa;
+      opacity:.8;
+      transform:translateY(-1px);
+    }
+    /* Every social has exactly the same 18px slot and icon file. */
+    .social .social-icon{width:18px;height:18px;display:block;fill:currentColor;transform-origin:center;flex:none}
+    /* Optical corrections for glyphs with different amounts of empty SVG space. */
+    .social:nth-child(1) .social-icon{transform:scale(.93)}
+    .social:nth-child(2) .social-icon{transform:scale(1.04)}
+    .social:nth-child(3) .social-icon{transform:scale(.94)}
+    .social:nth-child(4) .social-icon{transform:scale(.98)}
+    .social:nth-child(5) .social-icon{transform:scale(.99)}
+    .social:nth-child(6) .social-icon{transform:scale(1.17)}
+    .tooltip{
+      position:absolute;
+      top:calc(100% + 8px);
+      left:50%;
+      transform:translateX(-50%) translateY(-4px);
+      opacity:0;
+      pointer-events:none;
+      white-space:nowrap;
+      color:#aaa;
+      font:300 8px/1.2 'Inconsolata',monospace;
+      letter-spacing:0.25px;
+      transition:opacity .14s ease,transform .14s ease;
+    }
+    .social:hover .tooltip,.social:focus-visible .tooltip{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+    }
+    /* The same typing/deleting behavior as the supplied lovenote.html.
+       Keep a fixed line height so changing phrases never moves the icon row. */
+    .typewriter-line{
+      margin:14px 0 0;
+      width:240px;
+      min-height:1.45em;
+      color:#aaa;
+      text-align:center;
+      white-space:nowrap;
+      font-family:'Inconsolata',monospace;
+      font-size:8px;
+      font-weight:300;
+      line-height:1.45;
+      letter-spacing:0.5px;
+    }
+    #typewriter{font:inherit;letter-spacing:inherit;color:inherit}
+    :focus-visible{outline:1px solid var(--accent)}
+    @media(max-width:560px){
+      .center{transform:none}
+      .socials{gap:13px;width:228px;margin-top:0}
+      .typewriter-line{margin-top:13px;width:228px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Makes casual drag-to-select less convenient; does not protect source files. */
+body { -webkit-user-select: none; user-select: none; }
