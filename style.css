@@ -1,0 +1,37 @@
+/* fawn.gg — minimal social landing page */
+:root { --ink: #aaa; --white: #fff; }
+*,*::before,*::after { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; background:var(--white); }
+body { font-family:Inter,Arial,Helvetica,sans-serif; font-size:11px; font-weight:400; color:var(--ink); -webkit-font-smoothing:antialiased; -webkit-user-select:none; user-select:none; }
+a,button { -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none; }
+button { cursor:pointer; }
+[hidden] { display:none!important; }
+.page { min-height:100svh; min-height:100dvh; display:grid; place-items:center; padding:24px; }
+.center-content { display:flex; flex-direction:column; align-items:center; justify-content:center; max-width:100%; }
+.social-links { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:0; flex-wrap:nowrap; }
+.social-link { width:19px; height:22px; display:inline-flex; align-items:center; justify-content:center; padding:0; border:0; background:none; color:var(--ink); text-decoration:none; transition:opacity .18s ease,transform .18s ease; }
+.social-link img { display:block; width:18px; height:18px; object-fit:contain; pointer-events:none; -webkit-user-drag:none; user-select:none; }
+/* Slight optical adjustments to match the logos' visual weight. */
+.icon-twitch img { width:17px; height:17px; }
+.icon-x img { width:17px; height:17px; }
+.icon-tiktok img { width:17px; height:17px; }
+.icon-youtube img { width:18px; height:18px; }
+.icon-discord img { width:18px; height:18px; }
+.icon-throne img { width:19px; height:19px; }
+.social-link:hover { opacity:.6; transform:translateY(-1px); }
+.social-link:focus-visible { outline:1px solid #aaa; outline-offset:5px; border-radius:2px; }
+.creator-note { margin:16px 0 0; font-size:11px; font-weight:400; letter-spacing:.15px; line-height:1.5; color:var(--ink); text-align:center; }
+/* Use larger invisible tap targets on phones without enlarging the artwork.
+   Six 44px targets + five 4px gaps = 284px, fitting a 320px screen. */
+@media (max-width:600px) {
+  .page { padding:12px; }
+  .social-links { gap:4px; max-width:100%; }
+  .social-link { width:44px; height:44px; flex:0 0 44px; touch-action:manipulation; }
+  .social-link img { object-fit:contain; }
+  .creator-note { margin-top:12px; }
+}
+@media (max-width:310px) {
+  .social-link { width:40px; flex-basis:40px; }
+  .social-links { gap:2px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
