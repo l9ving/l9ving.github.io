@@ -35,33 +35,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* epic games creator code copy interaction */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const epicCode = document.getElementById("epicCode");
-    const copyButton = document.getElementById("epicCopyButton");
-
-    let resetTimer;
-
-    copyButton.addEventListener("click", async () => {
-        try {
-            // Copy ONLY the creator code
-            await navigator.clipboard.writeText("wuvabl");
-
-            // Fade out original text and show confirmation
-            epicCode.classList.add("is-copied");
-
-            // Reset the timer
-            clearTimeout(resetTimer);
-
-            // Return to the original text after 3 seconds
-            resetTimer = setTimeout(() => {
-                epicCode.classList.remove("is-copied");
-            }, 3000);
-
-        } catch (error) {
-            console.error("Failed to copy code:", error);
-        }
-    });
-});
-
