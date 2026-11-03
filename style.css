@@ -1,0 +1,23 @@
+/* fawn.gg — screenshot heading, uniformly scaled handles and evenly weighted icons */
+:root{color-scheme:light;--ink:#969696;--bg:#fff}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg)}
+body{color:var(--ink);font-family:monospace}
+button,a{-webkit-tap-highlight-color:transparent}
+.page{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px 14px}
+.social-menu{width:min(100%,255px);display:flex;flex-direction:column;align-items:center}
+.social-trigger{display:flex;align-items:center;justify-content:center;width:188px;height:69px;margin:0;padding:0;border:0;background:transparent;cursor:pointer;touch-action:manipulation;transition:opacity .18s}
+.social-trigger:hover{opacity:.78}
+.social-trigger img{display:block;width:176px;height:62px;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.social-trigger:focus-visible{outline:1px dotted var(--ink);outline-offset:3px}
+.link-reveal{width:100%;display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transform:translateY(-6px);transition:grid-template-rows .27s ease,opacity .22s ease,transform .27s ease,visibility 0s linear .27s}
+.social-menu.open .link-reveal{grid-template-rows:1fr;opacity:1;visibility:visible;transform:translateY(0);transition:grid-template-rows .27s ease,opacity .22s ease,transform .27s ease,visibility 0s linear 0s}
+.social-list{min-height:0;overflow:hidden;width:220px;display:flex;flex-direction:column;gap:2px;padding:0 3px}
+.social-menu.open .social-list{padding-top:12px}
+.social-link{display:grid;grid-template-columns:25px minmax(0,1fr);gap:12px;align-items:center;justify-items:start;width:100%;min-height:35px;padding:0 3px;border:0;background:transparent;text-decoration:none;color:var(--ink);cursor:pointer;transition:opacity .18s}
+.social-link .platform-icon{width:22px;height:22px;display:block;object-fit:contain;justify-self:center;flex:none}
+.social-link .handle-image{display:block;object-fit:contain;object-position:left center;max-width:none;max-height:none;pointer-events:none;image-rendering:auto}
+.social-link:hover,.social-link:focus-visible{opacity:.64}
+.social-link:focus-visible{outline:1px dotted #aaa;outline-offset:1px}
+@media(max-width:420px){.social-menu{width:min(100%,245px)}.social-list{width:min(100%,220px)}.social-link{min-height:40px}}
+@media(prefers-reduced-motion:reduce){.social-trigger,.link-reveal,.social-link{transition:none!important}}
