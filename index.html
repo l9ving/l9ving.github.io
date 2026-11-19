@@ -24,10 +24,18 @@
      until its opacity animation has fully completed. */
   .intro { display: flex; align-items: center; justify-content: center;
            opacity: 1; visibility: visible; pointer-events: none; }
-  .intro-heart { font-family: 'Segoe UI Symbol', 'Noto Sans Symbols 2', 'Apple Symbols',
+  /* .intro-heart { font-family: 'Segoe UI Symbol', 'Noto Sans Symbols 2', 'Apple Symbols',
                  'DejaVu Sans', sans-serif; font-size: 44px; line-height: 1;
                  font-weight: 400; font-variant-emoji: text; color: var(--ink);
-                 user-select: none; }
+                 user-select: none; } */
+  .intro-heart {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url("fawn-outline-heart.png") center / contain no-repeat;
+    font-size: 0;
+    user-select: none; }
+
   .socials { display: flex; flex-direction: column; align-items: stretch;
              justify-content: center; gap: 1px; opacity: 0; visibility: hidden;
              pointer-events: none; transform: translateY(5px); }
